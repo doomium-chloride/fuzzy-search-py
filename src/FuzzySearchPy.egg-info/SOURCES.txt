@@ -1,6 +1,9 @@
 pyproject.toml
 setup.cfg
 setup.py
+src/FuzzySearch.py
+src/Helper.py
+src/__init__.py
 src/FuzzySearchPy.egg-info/PKG-INFO
 src/FuzzySearchPy.egg-info/SOURCES.txt
 src/FuzzySearchPy.egg-info/dependency_links.txt

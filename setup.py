@@ -2,8 +2,8 @@ import setuptools
 
 setuptools.setup(
     name='FuzzySearchPy',
-    version='0.0.2',
-    packages=setuptools.find_packages(exclude=['tests*'], where="src"),
+    version='0.0.3',
+    packages=setuptools.find_packages(exclude=['tests*','env*','.vscode*','__pycache__','dist*'], where="src"),
     license='WTFPL',
     description='A port of FuzzySearch from JS',
     long_description=open('readme.md').read(),
