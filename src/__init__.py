@@ -1,3 +1,1 @@
-import FuzzySearch
-
-FuzzySearchPy = FuzzySearch
+from FuzzySearch import FuzzySearch
