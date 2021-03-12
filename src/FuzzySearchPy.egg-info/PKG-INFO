@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: FuzzySearchPy
+Version: 0.0.2
+Summary: A port of FuzzySearch from JS
+Home-page: https://github.com/doomium-chloride/fuzzy-search-py
+Author: doomium-chloride
+License: WTFPL
+Project-URL: Bug Tracker, https://github.com/doomium-chloride/fuzzy-search-py/issues
+Description: # FuzzySearchPY
+        
+        ## What is this?
+        
+        A "hand written" (obviously not hand written because it's typed) port of [fuzzy-search](https://www.npmjs.com/package/fuzzy-search)
+        
+        ## Why was this made?
+        
+        I like that package and I want to use it in python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: WTFPL
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
