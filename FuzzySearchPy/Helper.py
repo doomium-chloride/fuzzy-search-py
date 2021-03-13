@@ -1,7 +1,8 @@
 from typing import Any, Dict
 
+nonPrimitive = (dict, list)
+
 class Helper:
-    nonPrimitive = (dict, list)
     @staticmethod 
     def isPrimitive(value):
         return not isinstance(nonPrimitive)
