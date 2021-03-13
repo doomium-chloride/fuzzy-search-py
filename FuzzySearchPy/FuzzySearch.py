@@ -19,19 +19,16 @@ class FuzzySearch:
         results = []
 
         for item in self.haystack:
-            print("item in search", item)
             if len(self.keys) <= 0:
                 score = FuzzySearch.isMatch(item, query, self.options["caseSensitive"])
                 if score != False:
                     results.append(( item, score ))
             else:
                 for key in self.keys:
-                    print("key", key, item)
                     propertyValues = getDescendantProperty(item, key)
                     found = False
 
                     for propertyValue in propertyValues:
-                        print("prop value", propertyValue, item)
                         score = FuzzySearch.isMatch(propertyValue, query, self.options["caseSensitive"])
 
                         if score != False:
@@ -43,7 +40,6 @@ class FuzzySearch:
                         break
             
         if self.options["sort"]:
-            print("will sort", results)
             results.sort(key=lambda thing : thing[1])
 
         return [result[0] for result in results]
@@ -56,10 +52,8 @@ class FuzzySearch:
         if not caseSensitive:
             item = item.lower()
             query = query.lower()
-        print("item in is match", item)
         
         indicies = FuzzySearch.nearestIndexFor(item, query)
-        print("indicies in is match", indicies)
         if indicies == None:
             return False
         
@@ -73,11 +67,9 @@ class FuzzySearch:
     
     @staticmethod
     def nearestIndexFor(item, query):
-        print("item in nearest index for", item)
         letters = [letter for letter in query]
         
         indiciesOfFirstLetter = FuzzySearch.getIndiciesOfFirstLetter(item, query)
-        print("letter ind", indiciesOfFirstLetter)
         indiciesLength = len(indiciesOfFirstLetter)
         # init the array
         indicies = [None] * indiciesLength
@@ -90,13 +82,11 @@ class FuzzySearch:
             for letter in letters:
                 try:
                     index = item.index(letter, index)
-                    print("this index", letter, index)
                     indicies[loopingIndex].append(index)
                     index += 1
                 except ValueError:
                     indicies[loopingIndex] = None
                     break
-            print("indicies", indicies)
         
         indicies = list(filter(lambda thing : thing != None, indicies))
         

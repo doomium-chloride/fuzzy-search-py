@@ -10,7 +10,6 @@ def isPrimitive(value):
 def getDescendantProperty(dic, path, array = None):
     if array == None:
         array = []
-    print("dic", dic, path, array)
     firstSegment = ""
     remaining = ""
     dotIndex = 0
@@ -32,7 +31,6 @@ def getDescendantProperty(dic, path, array = None):
                 array.append(value)
             elif isinstance(value, list):
                 for item in value:
-                    print("item in value", item)
                     getDescendantProperty(item, remaining, array)
             elif len(remaining) > 0:
                 getDescendantProperty(value, remaining, array)
@@ -40,5 +38,4 @@ def getDescendantProperty(dic, path, array = None):
             pass
     else:
         array.append(dic)
-    print("array", array)
     return array
