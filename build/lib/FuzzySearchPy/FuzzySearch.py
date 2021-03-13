@@ -1,4 +1,4 @@
-from .Helper import Helper
+from Helper import Helper
 
 class FuzzySearch:
     def __init__(self, haystack = [], keys = [], options = {}):
@@ -17,7 +17,6 @@ class FuzzySearch:
         results = []
 
         for item in self.haystack:
-            print(item)
             if len(self.keys) <= 0:
                 score = FuzzySearch.isMatch(item, query, self.options["caseSensitive"])
                 if score != False:
@@ -25,7 +24,6 @@ class FuzzySearch:
             else:
                 for key in self.keys:
                     propertyValues = Helper.getDescendantProperty(item, key)
-
                     found = False
 
                     for propertyValue in propertyValues:

@@ -16,7 +16,7 @@ class Helper:
         index = 0
         length = 0
 
-        if path != None:
+        if len(path) > 0:
             try:
                 dotIndex = path.index('.')
                 firstSegment = path[:dotIndex]
@@ -26,7 +26,7 @@ class Helper:
             
             try:
                 value = dic[firstSegment]
-                if len(remaining) > 0 and Helper.isPrimitive(value):
+                if len(remaining) <= 0 and Helper.isPrimitive(value):
                     array.append(value)
                 elif isinstance(value, list):
                     for item in value:
@@ -34,6 +34,8 @@ class Helper:
                 elif len(remaining) > 0:
                     Helper.getDescendantProperty(value, remaining, array)
             except KeyError:
-                array.append(dic)
-        
+                pass
+        else:
+            array.append(dic)
+
         return array
