@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='FuzzySearchPy',
-    version='0.0.12',
+    version='0.0.13',
     packages=setuptools.find_packages(),
     license='WTFPL',
     description='A port of FuzzySearch from JS',
