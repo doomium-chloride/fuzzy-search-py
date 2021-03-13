@@ -4,5 +4,4 @@ setup.py
 FuzzySearchPy/FuzzySearchPy.egg-info/PKG-INFO
 FuzzySearchPy/FuzzySearchPy.egg-info/SOURCES.txt
 FuzzySearchPy/FuzzySearchPy.egg-info/dependency_links.txt
-FuzzySearchPy/FuzzySearchPy.egg-info/entry_points.txt
 FuzzySearchPy/FuzzySearchPy.egg-info/top_level.txt
