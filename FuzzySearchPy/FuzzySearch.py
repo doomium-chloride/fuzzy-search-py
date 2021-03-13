@@ -1,4 +1,4 @@
-from Helper import Helper
+from .Helper import Helper
 
 class FuzzySearch:
     def __init__(self, haystack = [], keys = [], options = {}):
