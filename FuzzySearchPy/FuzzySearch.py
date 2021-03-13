@@ -23,7 +23,7 @@ class FuzzySearch:
                 if score != False:
                     results.append(( item, score ))
             else:
-                for key in keys:
+                for key in self.keys:
                     propertyValues = Helper.getDescendantProperty(item, key)
 
                     found = False
