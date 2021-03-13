@@ -2,13 +2,18 @@ import setuptools
 
 setuptools.setup(
     name='FuzzySearchPy',
-    version='0.0.4',
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    version='0.0.5',
+    package_dir={"": "FuzzySearchPy"},
+    packages=setuptools.find_packages(where="FuzzySearchPy"),
     license='WTFPL',
     description='A port of FuzzySearch from JS',
     long_description=open('readme.md').read(),
-    install_requires=['numpy'],
     url='https://github.com/doomium-chloride/fuzzy-search-py',
-    author='doomium-chloride'
+    author='doomium-chloride',
+    author_email='evilsmellingliquid@gmail.com',
+    entry_points={
+        "console_scripts": [
+            "FuzzySearchPy=FuzzySearchPy.FuzzySeach:FuzzySearch"
+        ]
+    }
 )

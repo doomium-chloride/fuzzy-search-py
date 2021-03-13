@@ -1,9 +1,10 @@
 Metadata-Version: 2.1
 Name: FuzzySearchPy
-Version: 0.0.4
+Version: 0.0.5
 Summary: A port of FuzzySearch from JS
 Home-page: https://github.com/doomium-chloride/fuzzy-search-py
 Author: doomium-chloride
+Author-email: evilsmellingliquid@gmail.com
 License: WTFPL
 Project-URL: Bug Tracker, https://github.com/doomium-chloride/fuzzy-search-py/issues
 Description: # FuzzySearchPY
@@ -15,6 +16,17 @@ Description: # FuzzySearchPY
         ## Why was this made?
         
         I like that package and I want to use it in python
+        
+        ## How to use this?
+        
+        You create a FuzzySearcher instance
+        ```
+        fuzzy_searcher = FuzzySearcher(hay_stack, keys, options)
+        ```
+        Options is a dictionary that contains "caseSensitive" and "sort",
+        They need to be booleans, both default to false.
+        Keys are needed if you want to search for dictionaries.
+        Hay_stack can be a list of strings of a list of dictionaries
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: WTFPL
