@@ -2,40 +2,43 @@ from typing import Any, Dict
 
 nonPrimitive = (dict, list)
 
-class Helper:
-    @staticmethod 
-    def isPrimitive(value):
-        return not isinstance(value, nonPrimitive)
 
-    @staticmethod
-    def getDescendantProperty(dic, path, array = []):
-        firstSegment = ""
-        remaining = ""
-        dotIndex = 0
-        value = None
-        index = 0
-        length = 0
+def isPrimitive(value):
+    return not isinstance(value, nonPrimitive)
 
-        if len(path) > 0:
-            try:
-                dotIndex = path.index('.')
-                firstSegment = path[:dotIndex]
-                remaining = path[dotIndex + 1:]
-            except ValueError:
-                firstSegment = path
-            
-            try:
-                value = dic[firstSegment]
-                if len(remaining) <= 0 and Helper.isPrimitive(value):
-                    array.append(value)
-                elif isinstance(value, list):
-                    for item in value:
-                        Helper.getDescendantProperty(item, remaining, array)
-                elif len(remaining) > 0:
-                    Helper.getDescendantProperty(value, remaining, array)
-            except KeyError:
-                pass
-        else:
-            array.append(dic)
 
-        return array
+def getDescendantProperty(dic, path, array = None):
+    if array == None:
+        array = []
+    print("dic", dic, path, array)
+    firstSegment = ""
+    remaining = ""
+    dotIndex = 0
+    value = None
+    index = 0
+    length = 0
+
+    if len(path) > 0:
+        try:
+            dotIndex = path.index('.')
+            firstSegment = path[:dotIndex]
+            remaining = path[dotIndex + 1:]
+        except ValueError:
+            firstSegment = path
+        
+        try:
+            value = dic[firstSegment]
+            if len(remaining) <= 0 and isPrimitive(value):
+                array.append(value)
+            elif isinstance(value, list):
+                for item in value:
+                    print("item in value", item)
+                    getDescendantProperty(item, remaining, array)
+            elif len(remaining) > 0:
+                getDescendantProperty(value, remaining, array)
+        except KeyError:
+            pass
+    else:
+        array.append(dic)
+    print("array", array)
+    return array
