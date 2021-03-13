@@ -5,7 +5,7 @@ nonPrimitive = (dict, list)
 class Helper:
     @staticmethod 
     def isPrimitive(value):
-        return not isinstance(nonPrimitive)
+        return not isinstance(value, nonPrimitive)
 
     @staticmethod
     def getDescendantProperty(dic, path, array = []):

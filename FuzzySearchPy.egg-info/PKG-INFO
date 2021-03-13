@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: FuzzySearchPy
-Version: 0.0.10
+Version: 0.0.11
 Summary: A port of FuzzySearch from JS
 Home-page: https://github.com/doomium-chloride/fuzzy-search-py
 Author: doomium-chloride
