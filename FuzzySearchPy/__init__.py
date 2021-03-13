@@ -1,1 +1,1 @@
-from FuzzySearch import FuzzySearch
+from .FuzzySearch import FuzzySearch

@@ -1,7 +1,0 @@
-pyproject.toml
-setup.cfg
-setup.py
-src/fuzzy_search_py.egg-info/PKG-INFO
-src/fuzzy_search_py.egg-info/SOURCES.txt
-src/fuzzy_search_py.egg-info/dependency_links.txt
-src/fuzzy_search_py.egg-info/top_level.txt
